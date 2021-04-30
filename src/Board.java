@@ -1,35 +1,37 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.*;
 
-public class Board extends JPanel{
+public class Board extends JPanel implements ActionListener{
 
-    //testing out not using individual classes for these-
     Color color;
-    int enemy, bullet;
+    Timer timer;
 
-    ArrayList<Shape> player = new ArrayList<>();
-    Shape play = new Shape(Color.RED, 400, 400, 400, 400);
+    //Shape play = new Shape(Color.RED, 400, 400, 400, 400);
 
     public Board(){
 
         setPreferredSize(new Dimension(600,700));
         setBackground(Color.WHITE);
+        timer = new Timer(1000 / 60, this);
     }
 
-    public void Play(Color color, int x, int y, int width, int height){
+    public void setup(){
 
-    }
-
-    public setup(){
-
-
-    }
-
-    public void setPlayPos(int x, int y){
-
-        player.get(0).setPos(x, y);
+        timer.start();
     }
 
 
+    public void paint(Graphics p){
+
+
+    }
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
 }

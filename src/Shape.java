@@ -20,6 +20,7 @@ public class Shape {
         this.y = y;
     }
 
+
     public void setColor(Color color){this.color = color;}
     public void paint(Graphics p){}
 
