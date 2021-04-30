@@ -15,12 +15,13 @@ public class Game extends JFrame{
         pack();
 
         setLocationRelativeTo(null);
+
     }
 
     public static void main(String[] args) {
 
         Game game = new Game();
-
+        game.board.setup();
     }
 
 

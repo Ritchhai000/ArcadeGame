@@ -11,6 +11,9 @@ public class Board extends JPanel implements ActionListener{
 
     //Shape play = new Shape(Color.RED, 400, 400, 400, 400);
 
+    ArrayList<Shape> player = new ArrayList<>();
+    ArrayList<Shape> deco = new ArrayList<>();
+
     public Board(){
 
         setPreferredSize(new Dimension(600,700));
@@ -20,13 +23,31 @@ public class Board extends JPanel implements ActionListener{
 
     public void setup(){
 
+        player.add(0, new Player(Color.RED, 300, 300, 20, 20));
+
+        deco.add(0, new Deco(Color.getHSBColor(255,100,50), 0, 0, 20, 20));
+
         timer.start();
     }
 
+    public void setPos(int x, int y){
 
-    public void paint(Graphics p){
+        player.get(0).setPos(x, y);
+    }
 
+    public void paintComponent(Graphics p){
 
+        super.paintComponent(p);
+
+        for(Shape player: player){
+
+            player.paint(p);
+        }
+
+        for(Shape deco: deco){
+
+            deco.paint(p);
+        }
     }
 
 
