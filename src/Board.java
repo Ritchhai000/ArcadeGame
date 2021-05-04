@@ -8,9 +8,9 @@ public class Board extends JPanel implements ActionListener{
 
     Color color;
     Color grass = new Color(0, 128, 0);
+    Color background = new Color(255, 219, 138);
     Timer timer;
 
-    //Shape play = new Shape(Color.RED, 400, 400, 400, 400);
 
     ArrayList<Shape> player = new ArrayList<>();
     ArrayList<Shape> deco = new ArrayList<>();
@@ -18,7 +18,7 @@ public class Board extends JPanel implements ActionListener{
     public Board(){
 
         setPreferredSize(new Dimension(600,700));
-        setBackground(Color.WHITE);
+        setBackground(background);
         timer = new Timer(1000 / 60, this);
     }
 
@@ -55,5 +55,6 @@ public class Board extends JPanel implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        repaint();
     }
 }
