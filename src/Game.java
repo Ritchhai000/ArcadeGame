@@ -1,5 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionAdapter;
 
 public class Game extends JFrame{
 
@@ -16,6 +20,20 @@ public class Game extends JFrame{
 
         setLocationRelativeTo(null);
 
+        addMouseMotionListener(new MouseMotionAdapter(){
+
+            public void mouseMoved(MouseEvent m){
+
+                super.mouseMoved(m);
+                board.setPos(m.getX(), m.getY());
+            }
+        });
+
+        addMouseListener(new MouseAdapter() {
+
+
+        });
+
     }
 
     public static void main(String[] args) {
@@ -23,9 +41,5 @@ public class Game extends JFrame{
         Game game = new Game();
         game.board.setup();
     }
-
-
-
-
 
 }

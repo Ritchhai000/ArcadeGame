@@ -7,6 +7,7 @@ import javax.swing.*;
 public class Board extends JPanel implements ActionListener{
 
     Color color;
+    Color grass = new Color(0, 128, 0);
     Timer timer;
 
     //Shape play = new Shape(Color.RED, 400, 400, 400, 400);
@@ -25,7 +26,7 @@ public class Board extends JPanel implements ActionListener{
 
         player.add(0, new Player(Color.RED, 300, 300, 20, 20));
 
-        deco.add(0, new Deco(Color.getHSBColor(255,100,50), 0, 0, 20, 20));
+        deco.add(0, new Deco(grass, 0, 0, 20, 20));
 
         timer.start();
     }
