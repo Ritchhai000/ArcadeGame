@@ -13,18 +13,21 @@ public class Board extends JPanel implements ActionListener{
 
 
     ArrayList<Shape> player = new ArrayList<>();
+    ArrayList<Shape> enemy = new ArrayList<>();
     ArrayList<Shape> deco = new ArrayList<>();
 
     public Board(){
 
         setPreferredSize(new Dimension(600,700));
-        setBackground(background);
+        setBackground(Color.WHITE);
         timer = new Timer(1000 / 60, this);
     }
 
     public void setup(){
 
         player.add(0, new Player(Color.RED, 300, 300, 20, 20));
+
+        enemy.add(0, new Player(Color.PINK, 100, 100, 20, 20));
 
         deco.add(0, new Deco(grass, 0, 0, 20, 20));
 
@@ -41,12 +44,14 @@ public class Board extends JPanel implements ActionListener{
         super.paintComponent(p);
 
         for(Shape player: player){
-
             player.paint(p);
         }
 
-        for(Shape deco: deco){
+        for(Shape enemy: enemy){
+            enemy.paint(p);
+        }
 
+        for(Shape deco: deco){
             deco.paint(p);
         }
     }
@@ -54,6 +59,14 @@ public class Board extends JPanel implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        for(int i = 1; i < enemy.size(); i++){
+
+            Shape enemies = enemy.get(i);
+
+            enemies.dx = 5;
+            enemies.move(enemies.int_x, enemies.int_x, enemies.int_y,0,true, false);
+        }
 
         repaint();
     }
