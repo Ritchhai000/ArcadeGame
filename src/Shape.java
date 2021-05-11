@@ -4,7 +4,7 @@ public class Shape {
 
     Color color;
     int width, height, x, y, int_x, int_y;
-    double dx, dy;
+    double dx = 2, dy = 2;
 
     public Shape(Color color, int x, int y, int width, int height){
 
@@ -20,15 +20,16 @@ public class Shape {
         this.y = y;
     }
 
+
+
     public void move(int minWidth, int maxWidth, int minHeight, int maxHeight, boolean horizontal, boolean vertical){
 
 
-
         if(horizontal){
-            x += dx;
+            x *= dx;
         }
         if(vertical) {
-            y += dy;
+            y *= dy;
         }
     }
 
