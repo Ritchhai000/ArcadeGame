@@ -3,7 +3,7 @@ import java.awt.*;
 public class Shape {
 
     Color color;
-    int width, height, x, y, int_x, int_y;
+    int width, height, x, y;
     double dx = 2, dy = 2;
 
     public Shape(Color color, int x, int y, int width, int height){
@@ -23,6 +23,9 @@ public class Shape {
 
 
     public void move(int minWidth, int maxWidth, int minHeight, int maxHeight, boolean horizontal, boolean vertical){
+
+        double top, left, right, bottom;
+
 
 
         if(horizontal){
