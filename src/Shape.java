@@ -6,6 +6,9 @@ public class Shape {
     int width, height, x, y;
     double dx = 2, dy = 2;
 
+    Game game;
+    Board board;
+
     public Shape(Color color, int x, int y, int width, int height){
 
         this.color = color;
@@ -20,25 +23,23 @@ public class Shape {
         this.y = y;
     }
 
+    public void move() {
 
+        if (game.isUpPressed()) {
 
-    public void move(int minWidth, int maxWidth, int minHeight, int maxHeight, boolean horizontal, boolean vertical){
-
-        double top, left, right, bottom;
-
-
-
-        if(horizontal){
-            x *= dx;
+                y -= 5;
         }
-        if(vertical) {
-            y *= dy;
+
+        if (game.isDownPressed()) {
+
+                y += 5;
         }
     }
 
 
+
     public void setColor(Color color){this.color = color;}
-    public void paint(Graphics p){}
+    public void paint(Graphics p){p.setColor(Color.RED);}
 
 
 

@@ -10,7 +10,7 @@ public class Player extends Shape{
 
     public void paint(Graphics p){
 
-        p.setColor(color);
+        p.setColor(Color.RED);
         p.fillRect(x, y, width, height);
     }
 }
