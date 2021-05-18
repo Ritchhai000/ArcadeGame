@@ -3,7 +3,7 @@ import java.awt.*;
 public class Shape {
 
     Color color;
-    int width, height, x, y;
+    int width, height, x, y, init_x, init_y;
     double dx = 2, dy = 2;
 
     Game game;
@@ -16,9 +16,12 @@ public class Shape {
         this.height = height;
         this.x = x;
         this.y = y;
+        init_x = x;
+        init_y = y;
     }
 
     public void setPos(int x, int y){
+
         this.x = x;
         this.y = y;
     }
@@ -27,20 +30,23 @@ public class Shape {
 
         if (game.isUpPressed()) {
 
+            if (y > 0) {
+
                 y -= 5;
-        }
+            }
 
-        if (game.isDownPressed()) {
+            if (game.isDownPressed()) {
 
-                y += 5;
+                if (y + height < board.getHeight()) {
+
+                    y += 5;
+                }
+            }
         }
     }
 
-
-
-    public void setColor(Color color){this.color = color;}
-    public void paint(Graphics p){p.setColor(Color.RED);}
-
-
-
+    public void setColor(Color color){
+        this.color = color;
+    }
+    public void paint(Graphics g){ }
 }

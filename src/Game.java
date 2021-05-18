@@ -56,78 +56,78 @@ public class Game extends JFrame implements KeyListener {
 
 
     @Override
-        public void keyTyped(KeyEvent e) {
+    public void keyTyped(KeyEvent e) {
 
-
-        }
-
-    @Override
-        public void keyPressed(KeyEvent e) {
-
-            if (e.getKeyCode() == KeyEvent.VK_UP) {
-
-                System.out.println("test");
-                upPressed = true;
-            }
-
-            if (e.getKeyCode() == KeyEvent.VK_UP) {
-
-                downPressed = true;
-            }
-
-            if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-
-                leftPressed = true;
-            }
-
-            if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-
-                rightPressed = true;
-            }
-        }
+    }
 
     @Override
-        public void keyReleased (KeyEvent e) {
+    public void keyPressed(KeyEvent e) {
 
-            if (e.getKeyCode() == KeyEvent.VK_UP) {
+        if(e.getKeyCode() == KeyEvent.VK_UP){
 
-                upPressed = false;
-            }
+            System.out.println("up");
+            upPressed = true;
+        }
 
-            if (e.getKeyCode() == KeyEvent.VK_UP) {
+        if(e.getKeyCode() == KeyEvent.VK_DOWN){
 
-                downPressed = false;
-            }
+            System.out.println("down");
+            downPressed = true;
+        }
 
-            if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+        if(e.getKeyCode() == KeyEvent.VK_LEFT){
 
-                leftPressed = false;
-            }
+            System.out.println("left");
+            leftPressed = true;
+        }
 
-            if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+        if(e.getKeyCode() == KeyEvent.VK_RIGHT){
 
-                rightPressed = false;
-            }
+            System.out.println("right");
+            rightPressed = true;
+        }
+    }
+
+
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+        if(e.getKeyCode() == KeyEvent.VK_UP){
+
+            upPressed = false;
+        }
+
+        if(e.getKeyCode() == KeyEvent.VK_DOWN){
+
+            downPressed = false;
+        }
+
+        if(e.getKeyCode() == KeyEvent.VK_LEFT){
+
+            leftPressed = false;
+        }
+
+        if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+
+            rightPressed = false;
+        }
 
     }
 
     public boolean isUpPressed() {
-
         return upPressed;
     }
 
     public boolean isDownPressed() {
-
         return downPressed;
     }
 
     public boolean isLeftPressed() {
-
         return leftPressed;
     }
 
     public boolean isRightPressed() {
-
         return rightPressed;
     }
 
