@@ -9,15 +9,10 @@ public class Shape {
     Game game;
     Board board;
 
-    public Shape(Color color, int x, int y, int width, int height){
+    public Shape(Game game, Board board){
 
-        this.color = color;
-        this.width = width;
-        this.height = height;
-        this.x = x;
-        this.y = y;
-        init_x = x;
-        init_y = y;
+        this.game = game;
+        this.board = board;
     }
 
     public void setPos(int x, int y){
@@ -28,25 +23,12 @@ public class Shape {
 
     public void move() {
 
-        if (game.isUpPressed()) {
-
-            if (y > 0) {
-
-                y -= 5;
-            }
-
-            if (game.isDownPressed()) {
-
-                if (y + height < board.getHeight()) {
-
-                    y += 5;
-                }
-            }
-        }
     }
 
-    public void setColor(Color color){
-        this.color = color;
+    public void paint(Graphics p){
+
+        //Color color = new Color();
+        p.setColor(Color.BLUE);
+        p.fillRect(x, y, width, height);
     }
-    public void paint(Graphics g){ }
 }

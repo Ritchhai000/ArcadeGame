@@ -25,35 +25,7 @@ public class Game extends JFrame implements KeyListener {
 
         setLocationRelativeTo(null);
 
-        /*addMouseMotionListener(new MouseMotionAdapter(){
-
-            @Override
-            public void mouseMoved(MouseEvent m){
-
-                super.mouseMoved(m);
-                board.setPos(m.getX(), m.getY());
-            }
-        });
-
-        addMouseMotionListener(new MouseMotionAdapter(){
-
-            @Override
-            public void mouseMoved(MouseEvent m){
-                super.mouseMoved(m);
-
-                board.setPos(m.getX(), m.getY());
-            }
-        });
-
-        addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                super.mouseEntered(e);
-                setCursor(getToolkit().createCustomCursor(new BufferedImage(3, 3, BufferedImage.TYPE_INT_ARGB), new Point(0, 0), null));
-            }
-        });*/
     }
-
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -87,8 +59,6 @@ public class Game extends JFrame implements KeyListener {
             rightPressed = true;
         }
     }
-
-
 
     @Override
     public void keyReleased(KeyEvent e) {

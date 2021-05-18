@@ -30,8 +30,10 @@ public class Deco {
 
     }
 
-    public void setColor(Color color){
-        this.color = color;
+    public void paint(Graphics p){
+
+        Color color = new Color(45, 112, 54);
+        p.setColor(color);
+        p.fillRect(x, y, width, height);
     }
-    public void paint(Graphics g){ }
 }
