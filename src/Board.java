@@ -10,8 +10,8 @@ public class Board extends JPanel implements ActionListener{
     Deco deco;
     Timer timer;
 
-    int rand = (int)(Math.random() * 800) + 1;
-    int random = (int)(Math.random() * rand) + 100;
+    final int _NUMENEMIES = 1;
+
 
     ArrayList<Enemy> enemy = new ArrayList<>();
 
@@ -20,16 +20,29 @@ public class Board extends JPanel implements ActionListener{
         setPreferredSize(new Dimension(600,700));
         setBackground(Color.WHITE);
         player = new Player(game, this);
-        enemy.add(new Enemy(game, this));
+
+        for(int i = 0; i < _NUMENEMIES; i++){
+
+            for(int j = 0; j < _NUMENEMIES; j++)
+                System.out.println("test");
+
+                int rand1 = (int)(Math.random() * 600) + 1;
+                int randomW = (int)(Math.random() * rand1) + 100;
+
+                int rand2 = (int)(Math.random() * 800) + 1;
+                int randomH = (int)(Math.random() * rand2) + 100;
+
+                enemy.add(new Enemy(Color.BLUE, randomW, 0, 20, 20));
+                enemy.add(new Enemy(Color.BLUE, 0, randomH, 20, 20));
+                enemy.add(new Enemy(Color.BLUE, randomW, 800, 20, 20));
+                enemy.add(new Enemy(Color.BLUE, 600, randomH, 20, 20));
+        }
     }
 
     public void setup(){
 
         player.setPos(200, 200);
-        for(int i = 0; i > 10; i++){
-
-            enemy.get(i).setPos(random, random);
-        }
+        //enemy.get(0).setPos(random, random);
         timer = new Timer(1000/60,this);
         timer.start();
     }

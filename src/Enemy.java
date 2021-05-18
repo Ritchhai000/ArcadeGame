@@ -9,10 +9,13 @@ public class Enemy {
     Game game;
     Board board;
 
-    public Enemy(Game game, Board board){
+    public Enemy(Color color, int x, int y, int width, int height){
 
-        this.game = game;
-        this.board = board;
+        this.color = color;
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
     }
 
     public void setPos(int x, int y){
