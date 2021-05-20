@@ -31,7 +31,7 @@ public class Enemy {
     public void paint(Graphics p){
 
         //Color color = new Color();
-        p.setColor(Color.BLUE);
+        p.setColor(Color.RED);
         p.fillRect(x, y, width, height);
     }
 }

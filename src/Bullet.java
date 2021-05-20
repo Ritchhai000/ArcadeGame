@@ -1,18 +1,21 @@
 import java.awt.*;
 
-public class Shape {
+public class Bullet {
 
     Color color;
-    int width, height, x, y, init_x, init_y;
+    int width = 20, height = 20, x, y, init_x, init_y;
     double dx = 2, dy = 2;
 
     Game game;
     Board board;
 
-    public Shape(Game game, Board board){
+    public Bullet(Color color, int x, int y, int width, int height){
 
-        this.game = game;
-        this.board = board;
+        this.color = color;
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
     }
 
     public void setPos(int x, int y){
@@ -28,7 +31,8 @@ public class Shape {
     public void paint(Graphics p){
 
         //Color color = new Color();
-        p.setColor(Color.BLUE);
+        p.setColor(Color.YELLOW);
         p.fillRect(x, y, width, height);
     }
 }
+

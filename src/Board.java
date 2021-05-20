@@ -10,10 +10,12 @@ public class Board extends JPanel implements ActionListener{
     Deco deco;
     Timer timer;
 
-    final int _NUMENEMIES = 1;
+    final int _NUMENEMIES = 5;
 
 
     ArrayList<Enemy> enemy = new ArrayList<>();
+    ArrayList<Bullet> bulletE = new ArrayList<>();
+    ArrayList<Bullet> bulletP = new ArrayList<>();
 
     public Board(Game game){
 
@@ -24,18 +26,11 @@ public class Board extends JPanel implements ActionListener{
         for(int i = 0; i < _NUMENEMIES; i++){
 
             for(int j = 0; j < _NUMENEMIES; j++)
-                System.out.println("test");
 
-                int rand1 = (int)(Math.random() * 600) + 1;
-                int randomW = (int)(Math.random() * rand1) + 100;
-
-                int rand2 = (int)(Math.random() * 800) + 1;
-                int randomH = (int)(Math.random() * rand2) + 100;
-
-                enemy.add(new Enemy(Color.BLUE, randomW, 0, 20, 20));
-                enemy.add(new Enemy(Color.BLUE, 0, randomH, 20, 20));
-                enemy.add(new Enemy(Color.BLUE, randomW, 800, 20, 20));
-                enemy.add(new Enemy(Color.BLUE, 600, randomH, 20, 20));
+                enemy.add(new Enemy(Color.RED, (int)(Math.random() * 580) + 1, 0, 20, 20));
+                enemy.add(new Enemy(Color.RED, 0, (int)(Math.random() * 680) + 1, 20, 20));
+                enemy.add(new Enemy(Color.RED, (int)(Math.random() * 580) + 1, 680, 20, 20));
+                enemy.add(new Enemy(Color.RED, 580, (int)(Math.random() * 680) + 1, 20, 20));
         }
     }
 
@@ -45,6 +40,11 @@ public class Board extends JPanel implements ActionListener{
         //enemy.get(0).setPos(random, random);
         timer = new Timer(1000/60,this);
         timer.start();
+    }
+
+    public void addBullet(){
+
+        bulletE.add(new Bullet(Color.YELLOW, ));
     }
 
 
