@@ -3,19 +3,18 @@ import java.awt.*;
 public class Bullet {
 
     Color color;
-    int width = 20, height = 20, x, y, init_x, init_y;
+    int diameter = 20, x, y, init_x, init_y;
     double dx = 2, dy = 2;
 
     Game game;
     Board board;
 
-    public Bullet(Color color, int x, int y, int width, int height){
+    public Bullet(Color color, int x, int y, int diameter){
 
         this.color = color;
         this.x = x;
         this.y = y;
-        this.width = width;
-        this.height = height;
+        this.diameter = diameter;
     }
 
     public void setPos(int x, int y){
@@ -24,7 +23,12 @@ public class Bullet {
         this.y = y;
     }
 
-    public void move() {
+    public void fire() {
+
+        if(game.isSpacePressed()){
+
+            System.out.println("fire");
+        }
 
     }
 
@@ -32,7 +36,8 @@ public class Bullet {
 
         //Color color = new Color();
         p.setColor(Color.YELLOW);
-        p.fillRect(x, y, width, height);
+        p.fillOval(x, y, diameter, diameter);
     }
+
 }
 

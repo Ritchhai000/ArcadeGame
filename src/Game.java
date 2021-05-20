@@ -9,7 +9,7 @@ public class Game extends JFrame implements KeyListener {
 
     Board board;
 
-    private boolean upPressed, downPressed, leftPressed, rightPressed;
+    private boolean upPressed, downPressed, leftPressed, rightPressed, spacePressed;
 
     public Game() {
 
@@ -58,6 +58,12 @@ public class Game extends JFrame implements KeyListener {
             System.out.println("right");
             rightPressed = true;
         }
+
+        if(e.getKeyCode() == KeyEvent.VK_SPACE){
+
+
+            spacePressed = true;
+        }
     }
 
     @Override
@@ -83,6 +89,11 @@ public class Game extends JFrame implements KeyListener {
             rightPressed = false;
         }
 
+        if(e.getKeyCode() == KeyEvent.VK_SPACE){
+
+            spacePressed = false;
+        }
+
     }
 
     public boolean isUpPressed() {
@@ -100,6 +111,8 @@ public class Game extends JFrame implements KeyListener {
     public boolean isRightPressed() {
         return rightPressed;
     }
+
+    public boolean isSpacePressed() { return spacePressed; }
 
     public static void main(String[] args) {
 
