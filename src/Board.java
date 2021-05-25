@@ -11,19 +11,23 @@ public class Board extends JPanel implements ActionListener{
     Deco deco;
     Timer timer;
 
+    Game game;
+
+
     final int _NUMENEMIES = 1;
 
 
     ArrayList<Enemy> enemy = new ArrayList<>();
     ArrayList<Bullet> bulletE = new ArrayList<>();
-    //ArrayList<Bullet> bulletP = new ArrayList<>();
+    ArrayList<Bullet> bulletP = new ArrayList<>();
+
 
     public Board(Game game){
 
         setPreferredSize(new Dimension(600,700));
         setBackground(Color.WHITE);
         player = new Player(game, this);
-        bullet = new Bullet(Color.YELLOW, player.x, player.y, 20);
+        bullet = new Bullet(Color.YELLOW, player.x, player.y, 20, game);
 
         for(int i = 0; i < _NUMENEMIES; i++){
 
@@ -45,7 +49,7 @@ public class Board extends JPanel implements ActionListener{
 
     public void addBullet() {
 
-
+        bulletP.add(new Bullet(Color.YELLOW, player.x, player.y, 20, game));
     }
 
 
@@ -66,6 +70,13 @@ public class Board extends JPanel implements ActionListener{
     public void actionPerformed(ActionEvent e) {
 
         player.move();
+
+        for(int i = 0; i < bulletP.size(); i++){
+
+            Bullet bullets = bulletP.get(i);
+
+
+        }
         bullet.fire();
 
         repaint();
