@@ -112,32 +112,6 @@ public class Bullet implements KeyListener{
 
             y *= dy;
         }
-
-        if(game.isWPressed()){
-
-            System.out.println("fireUP");
-            y -= 5;
-        }
-
-        if(game.isAPressed()){
-
-            System.out.println("fireLEFT");
-            x -= 5;
-        }
-
-        if(game.isSPressed()){
-
-            System.out.println("fireDOWN");
-            y += 5;
-        }
-
-        if(game.isDPressed()){
-
-            System.out.println("fireRIGHT");
-            x += 5;
-        }
-
-
     }
 
     public void paint(Graphics p){

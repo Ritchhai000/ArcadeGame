@@ -9,7 +9,7 @@ public class Game extends JFrame implements KeyListener {
 
     Board board;
 
-    private boolean upPressed, downPressed, leftPressed, rightPressed, wPressed, aPressed, sPressed, dPressed;
+    private boolean upPressed, downPressed, leftPressed, rightPressed, spacePressed;
 
     public Game() {
 
@@ -59,28 +59,11 @@ public class Game extends JFrame implements KeyListener {
             rightPressed = true;
         }
 
-        if(e.getKeyCode() == KeyEvent.VK_W){
+        if(e.getKeyCode() == KeyEvent.VK_SPACE){
 
-
-            wPressed = true;
-        }
-
-        if(e.getKeyCode() == KeyEvent.VK_A){
-
-
-            aPressed = true;
-        }
-
-        if(e.getKeyCode() == KeyEvent.VK_S){
-
-
-            sPressed = true;
-        }
-
-        if(e.getKeyCode() == KeyEvent.VK_D){
-
-
-            dPressed = true;
+            System.out.println("fire");
+            board.addBullet();
+            spacePressed = true;
         }
     }
 
@@ -107,24 +90,9 @@ public class Game extends JFrame implements KeyListener {
             rightPressed = false;
         }
 
-        if(e.getKeyCode() == KeyEvent.VK_W){
+        if(e.getKeyCode() == KeyEvent.VK_SPACE){
 
-            wPressed = false;
-        }
-
-        if(e.getKeyCode() == KeyEvent.VK_A){
-
-            aPressed = false;
-        }
-
-        if(e.getKeyCode() == KeyEvent.VK_S){
-
-            sPressed = false;
-        }
-
-        if(e.getKeyCode() == KeyEvent.VK_D){
-
-            dPressed = false;
+            spacePressed = false;
         }
 
     }
@@ -145,13 +113,7 @@ public class Game extends JFrame implements KeyListener {
         return rightPressed;
     }
 
-    public boolean isWPressed() { return wPressed; }
-
-    public boolean isAPressed() { return aPressed; }
-
-    public boolean isSPressed() { return sPressed; }
-
-    public boolean isDPressed() { return dPressed; }
+    public boolean isSpacePressed() { return spacePressed; }
 
     public static void main(String[] args) {
 

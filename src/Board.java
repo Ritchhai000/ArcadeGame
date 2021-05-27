@@ -7,7 +7,6 @@ import javax.swing.*;
 public class Board extends JPanel implements ActionListener{
 
     Player player;
-    Bullet bullet;
     Deco deco;
     Timer timer;
 
@@ -27,7 +26,7 @@ public class Board extends JPanel implements ActionListener{
         setPreferredSize(new Dimension(600,700));
         setBackground(Color.WHITE);
         player = new Player(game, this);
-        bullet = new Bullet(Color.YELLOW, player.x, player.y, 20, game);
+        //bullet = new Bullet(Color.YELLOW, player.x, player.y, 20, game);
 
         for(int i = 0; i < _NUMENEMIES; i++){
 
@@ -47,11 +46,10 @@ public class Board extends JPanel implements ActionListener{
         timer.start();
     }
 
-    public void addBullet() {
+    public void addBullet(){
 
         bulletP.add(new Bullet(Color.YELLOW, player.x, player.y, 20, game));
     }
-
 
     public void paintComponent(Graphics p){
 
@@ -63,7 +61,11 @@ public class Board extends JPanel implements ActionListener{
             enemies.paint(p);
         }
 
-        bullet.paint(p);
+        for(Bullet bullets : bulletP){
+
+            bullets.paint(p);
+        }
+
     }
 
     @Override
@@ -75,9 +77,9 @@ public class Board extends JPanel implements ActionListener{
 
             Bullet bullets = bulletP.get(i);
 
-
+            bullets.dy = 8;
+            bullets.fire(bullets.x, bullets.x, getHeight(), 0, false, true);
         }
-        bullet.fire();
 
         repaint();
     }
